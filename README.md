@@ -14,20 +14,20 @@ To install this package run
 
 ## 1. Deep Copy
 
-Your Can copy nested Array and Object its return new array/object
+You Can copy nested Array and Object its return new array/object
 . Try this
 
 ```bash
   require('js-simplify-coding');
 ```
 
-or
+#### or
 
 ```bash
   import 'js-simplify-coding';
 ```
 
-Example 1:-
+#### Example 1:-
 
 ```bash
   let object1={
@@ -48,7 +48,7 @@ Example 1:-
 
 ```
 
-Output:-
+#### Output:-
 
 ```bash
 {
@@ -67,7 +67,7 @@ Output:-
 
 ```
 
-Example 2:-
+#### Example 2:-
 
 ```bash
 
@@ -80,11 +80,116 @@ console.log(arr2);
 
 ```
 
-Output:-
+#### Output:-
 
 ```bash
 
 [ 3, 4, 5, 6, 4444 ]
 [ 3, 4, 5, 6 ]
+
+```
+
+## 2. Check Is Equal
+
+You can compare two variable value of any data type (Array/Object ) and nested value. Try this
+
+```base
+const { isEqual } = require("js-simplify-coding");
+
+```
+
+#### or
+
+```base
+import {isEqual} from 'js-simplify-coding';
+
+```
+
+### isEqual(arg1,arg2,symbol)
+
+#### 1. arg1 (Required) First value
+
+#### 2. arg2 (Required) Second value
+
+#### 3. symbol (Optional), ('==' or '===') default (==)
+
+#### Example 1:-
+
+```bash
+console.log(isEqual(2,2))
+console.log(isEqual(5,'5'))
+console.log(isEqual(10,10,'==='))
+console.log(isEqual(10,"10",'==='))
+
+```
+
+#### Output:-
+
+```bash
+true
+true
+true
+false
+
+```
+
+#### Example 2:-
+
+```bash
+
+let temp1 = {
+  name: "Nitesh",
+  age: 25,
+  arr: [9, 88, 8],
+  info: {
+    add: "Bihar",
+  },
+  hi: undefined,
+};
+
+let temp2 = {
+  name: "Nitesh",
+  age: 25,
+  arr: [8, 88, 9],
+  info: {
+    add: "Bihar",
+  },
+  hi: undefined,
+};
+
+let temp3 = {
+  name: "Nitesh",
+  age: 26,
+  arr: [8, 88, 9],
+  info: {
+    add: "Bihar",
+  },
+  hi: undefined,
+};
+
+let temp4 = {
+  name: "Nitesh",
+  age: "25",
+  arr: [8, 88, 9],
+  info: {
+    add: "Bihar",
+  },
+  hi: undefined,
+};
+
+console.log(isEqual(temp1, temp2));
+console.log(isEqual(temp1, temp2,'==='));
+console.log(isEqual(temp1, temp3));
+console.log(isEqual(temp1, temp4,'==='));
+
+```
+
+#### Output:-
+
+```bash
+true
+true
+false
+false
 
 ```
